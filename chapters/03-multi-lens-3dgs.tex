@@ -1,0 +1,86 @@
+\section{Multi-lens 3DGS: an approach to power 3D scans leveraging wide and ultrawide lenses with data collected from consumer-grade devices}
+
+\towrite
+
+\subsection{OpenSplat as the chosen base code}
+
+\towrite
+
+\subsection{Choosing a proper dataset: ARKitScenes}
+
+\towrite
+
+\subsubsection{Isolating scenes images}
+
+\towrite
+
+\lstinputlisting[language=Python,caption={Python script for downsampling the raw wide folder so that it has the same image count as the ultrawide folder},label=lst:downsample-wide]{code/listing-1-downsample-wide.py}
+
+\subsubsection{Ultrawide preprocessing: undistortion and cropping}
+
+\towrite
+
+\lstinputlisting[language=Python,caption={Python script for fisheye undistortion using OpenCV},label=lst:fisheye-undistortion]{code/listing-2-fisheye-undistortion.py}
+
+\lstinputlisting[language=Python,caption={Developed python script used for cropping undistorted ultrawide images},label=lst:crop-ultrawide]{code/listing-3-crop-ultrawide.py}
+
+\begin{figure}[!htbp]
+  \centering
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-original-wide.png}{Original wide image}{fig:original-wide}\hfill
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-original-ultrawide.png}{Original ultrawide image}{fig:original-ultrawide}\hfill
+  \caption{Comparison between wide and ultrawide images, showcasing the difference in Field of View between the lenses.}\label{fig:wide-vs-ultrawide}
+\end{figure}
+
+\subsubsection{One scene, three scenarios}
+
+\towrite
+
+\begin{figure}[!htbp]
+  \centering
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-remap-original.png}{Original ultrawide image}{fig:remap-original}\hfill
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-remap-undistorted.png}{Undistorted ultrawide image}{fig:remap-undistorted}\hfill
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-remap-original-detail.png}{Detail of original ultrawide image}{fig:remap-original-detail}\hfill
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-remap-undistorted-detail.png}{Detail of undistorted ultrawide}{fig:remap-undistorted-detail}\hfill
+  \caption{Remap undistortion process, with details for both original and undistorted images. In images c and d, there is change in the lines formed by the blinds in the window, with those bending to a more intensive degree on image c than on image d.}\label{fig:remap-undistortion}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-preprocess-original.png}{Original ultrawide image}{fig:preprocess-original}\hfill
+  \thesissubfigure{.48\linewidth}{figures/ch3/fig-preprocess-final.png}{Preprocessed ultrawide image}{fig:preprocess-final}\hfill
+  \caption{Comparison between original and preprocessed ultrawide images}\label{fig:preprocessed-ultrawide}
+\end{figure}
+
+\thesisfigure{figures/ch3/fig-fov-overlay.png}{Overlaying comparison between final preprocessed ultrawide image and original wide image, with the overlapping FOV applied with a difference blend mode and the extra FOV still present after undistortion and cropping represented normally, as a frame to the wide image.}{fig:fov-overlay}
+
+\subsection{Generating a sparse point cloud}
+
+\towrite
+
+\subsubsection{Feature extraction}
+
+\towrite
+
+\subsubsection{Sequential Feature Matching}
+
+\towrite
+
+\subsubsection{Reconstruction (Multi-Model)}
+
+\towrite
+
+\subsection{Batch running OpenSplat with custom metric log}
+
+\towrite
+
+\lstinputlisting[language=C++,caption={C++ function for logging SSIM-weighted loss for each step on console},label=lst:ssim-logging]{code/listing-4-ssim-logging.cpp}
+
+\lstinputlisting[language=bash,caption={Bash script for processing scenes and recording metrics},label=lst:process-scenes]{code/listing-5-process-scenes.sh}
+
+\begin{figure}[!htbp]
+  \centering
+  \thesissubfigure{.8\linewidth}{figures/ch3/fig-colmap-wide.png}{COLMAP reconstruction using only wide lens images (Scene 41048085)}{fig:colmap-wide}\par\medskip
+  \thesissubfigure{.8\linewidth}{figures/ch3/fig-colmap-ultrawide.png}{COLMAP reconstruction using preprocessed ultrawide lens images (Scene 41048085)}{fig:colmap-ultrawide}\par\medskip
+  \thesissubfigure{.8\linewidth}{figures/ch3/fig-colmap-both.png}{COLMAP reconstruction using both wide and preprocessed ultrawide images (Scene 41048085)}{fig:colmap-both}\par\medskip
+  \caption{Qualitative comparison of COLMAP reconstructions under different input conditions for Scene 41048085.}\label{fig:colmap-qualitative}
+\end{figure}

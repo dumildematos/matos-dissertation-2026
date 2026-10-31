@@ -1,0 +1,48 @@
+% Dissertation skeleton based on the structure of content.pdf.
+% Overleaf: compiler = pdfLaTeX, main document = main.tex.
+\documentclass[10pt,letterpaper]{article} % The body of the source PDF is US Letter; the covers are A4.
+
+\input{config/preamble}
+\input{config/metadata}
+
+\begin{document}
+
+% --- Opening pages, set in Times like the IADE template ---
+\pagenumbering{Alph} % Hidden; keeps PDF page anchors distinct from the numbered pages.
+\input{frontmatter/cover}
+\begin{opening}
+\pagestyle{empty}
+\enablestamp
+\input{frontmatter/title-page}
+\blankpage
+\input{frontmatter/title-page-full}
+\blankpage
+\input{frontmatter/acknowledgements}
+\disablestamp
+\pagenumbering{roman} % The footer prints these in arabic as "- 1 -".
+\pagestyle{opening}
+\blankpage
+\input{frontmatter/abstract}
+\blankpage
+\end{opening}
+
+% --- Glossary and indexes, then the numbered sections ---
+\pagestyle{plain}
+\pagenumbering{arabic}
+\input{frontmatter/glossary}
+\input{frontmatter/abbreviations}
+\input{frontmatter/indexes}
+
+\include{chapters/01-introduction}
+\include{chapters/02-3d-scene-reconstruction}
+\include{chapters/03-multi-lens-3dgs}
+\include{chapters/04-methodology}
+\include{chapters/05-results}
+\include{chapters/06-conclusion}
+
+% --- Back matter ---
+\input{backmatter/references}
+\input{backmatter/annex}
+\input{frontmatter/back-cover}
+
+\end{document}

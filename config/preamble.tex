@@ -1,0 +1,128 @@
+% Packages and page layout. Values are measured from the source PDF.
+
+% --- Language and fonts ---
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{inconsolata}
+\usepackage[letterspace=150]{microtype}
+
+% --- Page layout: default article text block, set explicitly so the opening pages can differ ---
+\usepackage{geometry}
+\geometry{letterpaper,left=134bp,top=125bp,textwidth=345pt,textheight=550pt,headheight=12pt,headsep=25pt,footskip=30pt}
+
+% --- Figures, tables, maths ---
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{eso-pic}
+\usepackage{fancyhdr}
+
+% --- Code listings ---
+\usepackage{listings}
+\definecolor{codestring}{rgb}{.75,.1,.1}
+\definecolor{codecomment}{rgb}{.75,.1,.1}
+\definecolor{codekeyword}{rgb}{0,0,.7}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=6pt,
+  frame=single,
+  framesep=4pt,
+  xleftmargin=1.5em,
+  xrightmargin=.5em,
+  breaklines=true,
+  captionpos=b,
+  showstringspaces=false,
+  keywordstyle=\color{codekeyword},
+  stringstyle=\color{codestring},
+  commentstyle=\color{codecomment},
+  inputencoding=utf8
+}
+
+% --- Indexes: "Figure 1" entries in the list of figures ---
+\usepackage[titles]{tocloft}
+\renewcommand{\cftfigpresnum}{Figure }
+\setlength{\cftfignumwidth}{5em}
+
+% --- Bibliography: author-year, compiled with BibTeX ---
+\usepackage[round]{natbib}
+
+% --- Links: keep hyperref last ---
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks]{hyperref}
+
+% --- Skeleton helpers ---
+% Grey marker for text still to be written.
+\newcommand{\towrite}[1][Text to write.]{{\color[gray]{.55}\textit{[#1]}}}
+
+% \thesisimage[includegraphics options]{path}
+% Shows a labelled box until the file at `path` is uploaded to the project.
+\newcommand{\thesisimage}[2][width=\linewidth]{%
+  \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+    \fbox{\parbox[c][2.5cm][c]{.9\linewidth}{\centering\scriptsize\nolinkurl{#2}}}}}
+
+% \thesisfigure[includegraphics options]{path}{caption}{label}
+\newcommand{\thesisfigure}[4][width=.8\linewidth]{%
+  \begin{figure}[!htbp]
+    \centering
+    \thesisimage[#1]{#2}
+    \caption{#3}\label{#4}
+  \end{figure}}
+
+% \thesissubfigure{width}{path}{caption}{label}: use inside a figure environment.
+\newcommand{\thesissubfigure}[4]{%
+  \begin{subfigure}[t]{#1}
+    \centering
+    \thesisimage{#2}
+    \caption{#3}\label{#4}
+  \end{subfigure}}
+
+% Unnumbered heading that still appears in the index.
+\newcommand{\indexedsection}[1]{\phantomsection\section*{#1}\addcontentsline{toc}{section}{#1}}
+
+% --- Opening pages: Times 12pt on the wider IADE template block ---
+\newlength{\labelcolumn}\setlength{\labelcolumn}{149bp}
+\newlength{\textcolumn}\setlength{\textcolumn}{315bp}
+\newenvironment{opening}
+  {\newgeometry{left=77bp,right=71bp,top=72bp,bottom=72bp,footskip=22bp}%
+   \fontfamily{ptm}\fontsize{12}{13.8}\selectfont\setlength{\parindent}{0pt}}
+  {\clearpage\restoregeometry}
+
+% Label on the left, text on the right.
+\newcommand{\sidecolumns}[2]{%
+  \par\noindent\parbox[t]{\labelcolumn}{\textbf{#1}}\parbox[t]{\textcolumn}{\setlength{\parskip}{13.8pt}\leavevmode#2}\par\bigskip}
+
+\newcommand{\blankpage}{\clearpage\null\clearpage}
+
+\fancypagestyle{opening}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\fontsize{11}{13}\selectfont - \arabic{page} -}}
+
+% Rotated form code in the left margin of the opening pages.
+\newcommand{\enablestamp}{\AddToShipoutPictureBG{\AtPageLowerLeft{%
+  \put(\LenToUnit{22bp},\LenToUnit{138bp}){\rotatebox{90}{\fontfamily{phv}\fontsize{7}{8}\selectfont\thesisformcode}}}}}
+\newcommand{\disablestamp}{\clearpage\ClearShipoutPictureBG}
+
+% --- Covers: A4 pages with a dark background ---
+\definecolor{iadeblue}{rgb}{.133,.569,.769}
+\newcommand{\covergothic}{\fontfamily{qag}\selectfont} % Closest free match to Century Gothic.
+% \coverblock{colour}{x}{y}{width}{height}, in bp from the lower left corner of the page.
+\newcommand{\coverblock}[5]{\put(#2,#3){\textcolor{#1}{\rule{#4bp}{#5bp}}}}
+% \covertext{baseline height}{font}{size}{leading}{text}: centred on the page, in bp from the bottom.
+\newcommand{\covertext}[5]{\put(47.5,#1){\parbox[t]{500bp}{\centering\fontfamily{ptm}#2\fontsize{#3}{#4}\selectfont #5}}}
+% Semi-bold title: Times has no such weight, so the letters get a thin outline (pdfLaTeX only).
+\newcommand{\coversemibold}[1]{\leavevmode\pdfliteral direct{2 Tr 0.38 w}#1\pdfliteral direct{0 Tr 1 w}}
+\newlength{\savedpaperwidth}\newlength{\savedpaperheight}
+\newcommand{\startcoverpage}{%
+  \clearpage
+  \setlength{\savedpaperwidth}{\paperwidth}\setlength{\savedpaperheight}{\paperheight}%
+  \setlength{\paperwidth}{595bp}\setlength{\paperheight}{842bp}%
+  \pdfpagewidth=\paperwidth\pdfpageheight=\paperheight}
+\newcommand{\finishcoverpage}{%
+  \clearpage
+  \setlength{\paperwidth}{\savedpaperwidth}\setlength{\paperheight}{\savedpaperheight}%
+  \pdfpagewidth=\paperwidth\pdfpageheight=\paperheight}

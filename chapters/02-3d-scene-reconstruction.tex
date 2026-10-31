@@ -1,0 +1,74 @@
+\section{3D Scene Reconstruction: understanding photogrammetry, novel view synthesis and stereoscopy}
+
+\towrite
+
+\subsection{The breakthrough in Côte d'Azur}
+
+\towrite
+
+\thesisfigure{figures/ch2/fig-point-cloud.png}{3D point cloud (bottom) generated from images (top). From \textit{3D Digitization using Structure from Motion} (Haro et al., 2012).}{fig:point-cloud}
+
+\thesisfigure{figures/ch2/fig-nerf-vs-gaussian-splatting.png}{A conceptual comparison between NeRFs and Gaussian Splatting, originally presented in \textit{A Comprehensive Overview of Gaussian Splatting} (Yurkova, 2024).}{fig:nerf-vs-gaussian-splatting}
+
+\thesisfigure{figures/ch2/fig-gaussian-splatting-workflow.png}{Representation of a traditional Gaussian Splatting workflow, originally presented in \textit{3D Gaussian Splatting for Real-Time Radiance Field Rendering} (Kerbl et al., 2023).}{fig:gaussian-splatting-workflow}
+
+\subsection{3DGS-LiDAR, a hardware assisted approach for Gaussian Splatting model improvements}
+
+\towrite
+
+\subsubsection{How much extra data is actually helpful?}
+
+\towrite
+
+\subsubsection{Optimizing image overlap}
+
+\towrite
+
+\subsubsection{Merging Point Clouds}
+
+\towrite
+
+\subsubsection{Improvements in final output}
+
+\towrite
+
+\thesisfigure{figures/ch2/fig-lidar-3dgs.png}{Originally from \textit{LiDAR-3DGS: LiDAR Reinforced 3D Gaussian Splatting for Multimodal Radiance Field Rendering} (Lim et al., 2024).}{fig:lidar-3dgs}
+
+\subsection{Revisiting stereoscopy: a multi-lens approach for recreating a 3D scene}
+
+\towrite
+
+\begin{figure}[!htbp]
+  \centering
+  \thesissubfigure{.3\linewidth}{figures/ch2/fig-wheatstone-stereoscope.png}{Wheatstone's stereoscope}{fig:wheatstone-stereoscope}\hfill
+  \thesissubfigure{.3\linewidth}{figures/ch2/fig-great-exhibition-left.png}{1851 Great Exhibition - L}{fig:great-exhibition-left}\hfill
+  \thesissubfigure{.3\linewidth}{figures/ch2/fig-great-exhibition-right.png}{1851 Great Exhibition - R}{fig:great-exhibition-right}\hfill
+  \caption{First stereoscopic device, with details of the pictures used for left eye (L) and right eye (R) viewing. Reproduced from the King's College London archive.}\label{fig:stereoscope}
+\end{figure}
+
+\thesisfigure{figures/ch2/fig-kodak-stereo-camera.png}{Example of a Kodak Stereo Camera, a 35mm stereoscopic film camera manufactured during 1954 and 1959. Photography by John Alan Elson, licensed under CC BY-SA 4.0.}{fig:kodak-stereo-camera}
+
+\thesisfigure{figures/ch2/fig-anaglyph-glasses.png}{Passive anaglyph 3D glasses mechanics illustration sourced from \textit{How 3D Glasses Work?} (Brain, 2000).}{fig:anaglyph-glasses}
+
+\thesisfigure{figures/ch2/fig-stereoscopic-principles.png}{Sourced from \textit{Basic Principles of Stereoscopic 3D} (Reeve and Flock, 2010)}{fig:stereoscopic-principles}
+
+\thesisfigure{figures/ch2/fig-vr-headsets.png}{Sourced from \textit{What are VR headsets?} (Interaction Design Foundation - IxDF, 2024)}{fig:vr-headsets}
+
+\subsection{COLMAP and OpenCV as relevant tools and libraries}
+
+\towrite
+
+\thesisfigure{figures/ch2/fig-colmap-depths-normals.png}{Images with filtered depths and normals for crowd-sourced images, after Colmap Dense Reconstruction. Presented originally in \textit{Pixelwise View Selection for Unstructured Multi-View Stereo} (Schönberger et al., 2016).}{fig:colmap-depths-normals}
+
+\begin{figure}[!htbp]
+  \centering
+  \thesissubfigure{.48\linewidth}{figures/ch2/fig-barrel-distortion-source.png}{Processing barrel distortion on source image}{fig:barrel-distortion-source}\hfill
+  \thesissubfigure{.48\linewidth}{figures/ch2/fig-barrel-distortion-final.png}{Final image after calibration}{fig:barrel-distortion-final}\hfill
+  \caption{Image undistortion process using OpenCV, presented originally in \textit{OpenCV Camera Calibration} (Bradski, 2000).}\label{fig:opencv-undistortion}
+\end{figure}
+
+\subsection{Lens distortions and important photography concepts}
+
+\towrite
+
+\thesisfigure{figures/ch2/fig-lens-distortion.png}{Example of lens distortion originally presented on \textit{Learning OpenCV} (Bradski and Kaehler, 2011)}{fig:lens-distortion}
