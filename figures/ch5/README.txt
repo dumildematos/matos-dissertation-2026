@@ -1,3 +1,1 @@
-Upload these files here; each replaces its placeholder box automatically:
-  fig-opensplat-both.png
-  fig-opensplat-wide.png
+Upload this chapter's figures here, then add them to the chapter with 	hesisfigure.

@@ -1,5 +1,22 @@
 % Packages and page layout. Values are measured from the source PDF.
 
+% --- Engine: the covers use pdfTeX primitives, mapped here so LuaLaTeX compiles too ---
+\usepackage{iftex}
+\ifluatex
+  \let\pdfpagewidth\pagewidth
+  \let\pdfpageheight\pageheight
+  \protected\def\pdfliteral{\pdfextension literal}
+  % T1 fonts drop this punctuation under LuaLaTeX when typed as Unicode.
+  \usepackage{newunicodechar}
+  \newunicodechar{–}{\textendash}
+  \newunicodechar{—}{\textemdash}
+  \newunicodechar{‘}{\textquoteleft}
+  \newunicodechar{’}{\textquoteright}
+  \newunicodechar{“}{\textquotedblleft}
+  \newunicodechar{”}{\textquotedblright}
+  \newunicodechar{…}{\textellipsis}
+\fi
+
 % --- Language and fonts ---
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -84,6 +101,7 @@
 
 % Unnumbered heading that still appears in the index.
 \newcommand{\indexedsection}[1]{\phantomsection\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\indexedsubsection}[1]{\phantomsection\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
 
 % --- Opening pages: Times 12pt on the wider IADE template block ---
 \newlength{\labelcolumn}\setlength{\labelcolumn}{149bp}
@@ -114,7 +132,7 @@
 \newcommand{\coverblock}[5]{\put(#2,#3){\textcolor{#1}{\rule{#4bp}{#5bp}}}}
 % \covertext{baseline height}{font}{size}{leading}{text}: centred on the page, in bp from the bottom.
 \newcommand{\covertext}[5]{\put(47.5,#1){\parbox[t]{500bp}{\centering\fontfamily{ptm}#2\fontsize{#3}{#4}\selectfont #5}}}
-% Semi-bold title: Times has no such weight, so the letters get a thin outline (pdfLaTeX only).
+% Semi-bold title: Times has no such weight, so the letters get a thin outline.
 \newcommand{\coversemibold}[1]{\leavevmode\pdfliteral direct{2 Tr 0.38 w}#1\pdfliteral direct{0 Tr 1 w}}
 \newlength{\savedpaperwidth}\newlength{\savedpaperheight}
 \newcommand{\startcoverpage}{%

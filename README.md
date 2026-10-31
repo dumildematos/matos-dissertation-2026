@@ -1,6 +1,6 @@
 # Dissertation: Overleaf project
 
-Skeleton built from the structure of `content.pdf`: same sections, figures, tables, code listings, annex, page layout and covers. Grey `[Text to write.]` markers show where text goes.
+Skeleton with the dissertation's sections, annex, page layout and covers. Grey `[Text to write.]` markers show where text goes.
 
 ## Open in Overleaf
 
@@ -15,7 +15,7 @@ Skeleton built from the structure of `content.pdf`: same sections, figures, tabl
 | `config/metadata.tex` | Author, title, year, degree, supervisors. The covers and title pages read from this file. |
 | `config/preamble.tex` | Packages, page layout, helper commands. |
 | `frontmatter/` | Covers, title pages, acknowledgements, abstract, glossary, abbreviations, indexes. |
-| `chapters/` | One file per numbered section (1 to 6). |
+| `chapters/` | One file per numbered section (1 to 7). |
 | `tables/` | One file per table, loaded from the chapters. |
 | `code/` | One file per code listing, loaded from the chapters and the annex. |
 | `figures/` | Logos, plus one folder per chapter. |
@@ -25,7 +25,8 @@ Skeleton built from the structure of `content.pdf`: same sections, figures, tabl
 ## Adding content
 
 - **Text:** replace `\towrite` in the chapter files.
-- **Figures:** upload a PNG under the name shown in its placeholder box. The `README.txt` in each figure folder lists the names. For another file type, change the path in the chapter too.
-- **Code:** paste the code into the matching file in `code/`.
-- **Citations:** add entries to `references.bib`, cite with `\citep{key}`, and remove the `\nocite` line in `backmatter/references.tex`. Citations inside figure captions are plain text for now; replace them with `\citep` once the entries exist.
-- **Cross-references:** use `Fig.~\ref{fig:lens-comparison}` or `Table~\ref{tab:ssim-per-scene}`. Numbers update on their own.
+- **Figures:** upload the image to the chapter's folder in `figures/`, then add `\thesisfigure{figures/ch1/fig-name.png}{Caption.}{fig:name}` to the chapter. Until the file exists, a placeholder box shows its name.
+- **Tables:** add a file to `tables/` and load it from the chapter with `\input{tables/tab-1-name}`.
+- **Code:** add a file to `code/` and load it with `\lstinputlisting[language=Python,caption={Caption},label=lst:name]{code/listing-1-name.py}`.
+- **Citations:** add entries to `references.bib`, cite with `\citep{key}`, and remove the `\nocite` line in `backmatter/references.tex`.
+- **Cross-references:** use `Fig.~\ref{fig:name}` or `Table~\ref{tab:name}`. Numbers update on their own.

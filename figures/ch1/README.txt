@@ -1,4 +1,1 @@
-Upload these files here; each replaces its placeholder box automatically:
-  fig-lens-telephoto.png
-  fig-lens-wide.png
-  fig-lens-ultrawide.png
+Upload this chapter's figures here, then add them to the chapter with 	hesisfigure.

@@ -1,4 +1,1 @@
-Upload these files here; each replaces its placeholder box automatically:
-  fig-preprocessed-vs-raw.png
-  fig-colmap-preprocessed.png
-  fig-colmap-raw.png
+Upload this chapter's figures here, then add them to the chapter with 	hesisfigure.
