@@ -1,6 +1,6 @@
 # Dissertation: Overleaf project
 
-Skeleton with the dissertation's sections, annex, page layout and covers. Grey `[Text to write.]` markers show where text goes.
+Skeleton with the dissertation's sections, appendices, page layout and covers. Grey `[Text to write.]` markers show where text goes.
 
 ## Open in Overleaf
 
@@ -17,9 +17,9 @@ Skeleton with the dissertation's sections, annex, page layout and covers. Grey `
 | `frontmatter/` | Covers, title pages, acknowledgements, abstract, glossary, abbreviations, indexes. |
 | `chapters/` | One file per numbered section (1 to 7). |
 | `tables/` | One file per table, loaded from the chapters. |
-| `code/` | One file per code listing, loaded from the chapters and the annex. |
+| `code/` | One file per code listing, loaded from the chapters and the appendices. |
 | `figures/` | Logos, plus one folder per chapter. |
-| `backmatter/` | References page and annex. |
+| `backmatter/` | References page and appendices. |
 | `references.bib` | Bibliography database (BibTeX, `apalike` style). |
 
 ## Adding content

@@ -1,59 +1,59 @@
-\section{Design and Implementation of the Python Framework}
+\section{Development of an Emotiv EPOC X-Based Brain-Controlled Car System}
 
-\towrite
+\towrite[Aim: open the chapter in one short paragraph. Cover: the purpose of the brain-controlled car system and how this chapter answers the design objectives from Section 1.7.]
 
 \subsection{Introduction}
 
-\towrite
+\towrite[Aim: outline the chapter. Cover: the design goals, namely real-time control, safety, data capture and openness; the order of the sections that follow.]
 
 \subsection{System Requirements}
 
-\towrite
+\towrite[Aim: list what the system must do. Cover: functional requirements, such as acquiring commands, mapping them, driving the car, stopping and logging; non-functional requirements, such as latency, reliability and portability. Give each an identifier, such as FR1 or NFR1, so Section 3.13 can test it.]
 
-\subsection{Overall System Architecture}
+\subsection{Overall Architecture}
 
-\towrite
+\towrite[Aim: show the whole system at a glance. Cover: an architecture diagram from headset through the Python framework and microcontroller to the motors; the main modules and their responsibilities; data flow; why the system is modular. Place the diagram in figures/ch3.]
 
-\subsection{Hardware and Software Components}
+\subsection{Emotiv EPOC X and Brain Activity Acquisition}
 
-\towrite
+\towrite[Aim: explain how brain activity enters the system. Cover: headset fitting and contact quality; authentication and app credentials; session creation; subscribing to the data stream; handling errors and disconnections. Follow the Cortex API documentation for the version you used, and never show real credentials.]
 
-\subsection{Integration with the Emotiv Cortex API}
+\subsection{Car Construction and Integration of Electronic Components}
 
-\towrite
+\towrite[Aim: describe the design of the car. Cover: chassis, motors and steering; motor driver, power supply and wireless module; wiring, with a diagram and photos; a component table with part names and quantities; why each part was chosen. Section 4.3 records the car as used in the experiments, so keep the design reasoning here.]
 
-\subsection{Mental Commands Acquisition and Processing}
+\subsection{Microcontroller, Firmware and Motor Control}
 
-\towrite
+\towrite[Aim: explain the embedded software. Cover: the microcontroller chosen and why; firmware structure and development tools; how commands become motor signals, such as PWM speed control; start-up state and stopping behaviour. Use a short code listing if useful.]
 
-\subsection{Command Mapping and Control Logic}
+\subsection{Development of the Python Framework}
 
-\towrite
+\towrite[Aim: explain how the framework was built. Cover: Python version, libraries and module structure; concurrency, such as asyncio or threads; configuration; a table of software versions. Also cover its open-source design: repository structure, licence, dependency management, installation and how to extend it to other devices, with full details in Appendix E.]
 
-\subsection{Communication Between the Framework and Remote Car}
+\subsection{Communication Between the Python Framework and the Microcontroller}
 
-\towrite
+\towrite[Aim: describe the link to the car. Cover: the wireless technology used; the message format; acknowledgements and retries; behaviour when the link drops. Explain why you chose this option over the alternatives.]
 
-\subsection{Real-Time Control Mechanism}
+\subsection{Data Processing and Identification of Commands}
 
-\towrite
+\towrite[Focus on Emotiv Mental Commands if that is the option you choose. Aim: explain what happens to a command on arrival. Cover: the received action and power values; timestamps; threshold filtering; smoothing or debouncing, such as requiring a command to persist. Justify each parameter and show a short code listing if useful.]
 
-\subsection{Safety Mechanisms and Emergency Stop}
+\subsection{Mapping Commands to Car Movements}
 
-\towrite
+\towrite[Aim: explain how brain commands become car actions. Cover: the mapping table, such as push to forward; the role of neutral; handling of conflicting commands; state logic, ideally as a state diagram.]
 
-\subsection{Data Logging and Experimental Recording}
+\subsection{Real-time Control and Safety Mechanisms}
 
-\towrite
+\towrite[Aim: explain how the system stays timely and safe. Cover: the control loop and update rate; buffering and avoiding stale commands; where timestamps are captured for latency measurement; a manual emergency stop independent of the EEG channel; stopping on lost signal or a timeout watchdog; default to stopped; speed limits. Show which risks each mechanism covers, drawing on Section 2.11.]
 
-\subsection{Software Testing and Validation}
+\subsection{Data Logging and System Monitoring}
 
-\towrite
+\towrite[Aim: explain what the system records and displays. Cover: logged fields, such as timestamps, commands, power values and car actions; file format; session identifiers; how participant data stays pseudonymised; live monitoring of signal quality, connection and car state during sessions. Make sure the logs can produce every metric in Section 4.11.]
 
-\subsection{Open-Source Design and Reproducibility}
+\subsection{Technical Testing and Integration Validation}
 
-\towrite
+\towrite[Aim: show the system works before people use it. Cover: unit tests; bench tests of motors and firmware; integration tests from framework to car; a simulated command source for tests without a headset; timing and emergency stop tests; a table linking requirements from Section 3.2 to test results.]
 
 \subsection{Chapter Summary}
 
-\towrite
+\towrite[Aim: close the chapter. Cover: what was built, how it meets the requirements, and how it serves as the instrument for the evaluation in Chapter 4.]

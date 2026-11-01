@@ -1,71 +1,71 @@
-\section{Brain–Computer Interfaces and EEG-Based Control: A Literature Review}
+\section{Brain-Computer Interfaces and EEG-Based Control}
 
-\towrite
+\towrite[Aim: open the literature review in one short paragraph. Cover: the subject of the chapter and how it supports the research question.]
 
 \subsection{Introduction}
 
-\towrite
+\towrite[Aim: explain how the review is organised. Cover: the search approach, including databases, keywords and date range; what you included and excluded; the order of the sections that follow.]
 
-\subsection{Brain–Computer Interfaces}
+\subsection{Fundamentals of Brain-Computer Interfaces}
 
-\towrite
+\towrite[Aim: define the field. Cover: what a BCI is; the standard pipeline of acquisition, processing, translation and output; invasive versus non-invasive; active, reactive and passive BCIs; main application areas. Cite foundational sources.]
 
 \subsection{EEG Technology and Brain Signal Acquisition}
 
-\towrite
+\towrite[Aim: explain how EEG works and where it falls short. Cover: what EEG measures; frequency bands; electrode placement; wet versus dry or saline sensors; artefacts from muscle and eye movement; low spatial resolution and signal-to-noise problems.]
 
-\subsection{EEG-Based Control Paradigms}
+\subsection{EEG-Based BCI Paradigms}
 
-\towrite
+\towrite[Aim: compare the main ways to generate commands. Cover: motor imagery; P300; SSVEP; other mental tasks; facial signals as non-brain alternatives. Compare training needs, command rate and suitability for continuous control, ideally in a table, and say which paradigm this work uses and why.]
 
 \subsection{Emotiv EPOC X: Architecture and Capabilities}
 
-\towrite
+\towrite[Aim: describe the device used in the study. Cover: channels and sensor layout, sampling rate, resolution, connectivity, sensors and software. Take every specification from Emotiv's documentation and cite it; also report independent validation studies against research-grade EEG.]
 
-\subsection{Emotiv Mental Commands}
+\subsection{Emotiv Mental Commands: Principles and Limitations}
 
-\towrite
+\towrite[Aim: explain the detection feature your framework depends on. Cover: how users train commands; the neutral state; how many commands can be active; the output of command and power values; what is and is not public about the algorithm. Note the consequences of treating it as a black box.]
 
 \subsection{Consumer-Grade EEG Devices in BCI Applications}
 
-\towrite
+\towrite[Aim: place the EPOC X among similar devices. Cover: other consumer headsets; cost and usability benefits; accuracy limits compared with research systems; reported use in BCI studies.]
 
 \subsection{Machine Learning Approaches for EEG Classification}
 
-\towrite
+\towrite[Aim: review how EEG is classified. Cover: feature extraction; classical models such as LDA and SVM; deep learning such as CNN-based models; subject-dependent versus subject-independent training; small dataset and overfitting problems. Link this to the optional work in Section 4.13.]
 
-\subsection{EEG-Based Vehicle and Mobile Robot Control}
+\subsection{EEG-Based Control of Vehicles and Mobile Robots}
 
-\towrite
+\towrite[Aim: review the closest applied work. Cover: studies of EEG-controlled cars, wheelchairs and robots; for each, the device, paradigm, number of commands, participants and results. A comparison table works well here and supports Section 6.8.]
 
-\subsection{Real-Time BCI Performance Challenges}
+\subsection{Challenges of Real-Time BCI Control}
 
-\towrite
+\towrite[Aim: introduce the challenges that shape the framework and metrics. Cover: why online control is harder than offline classification, and how each subsection below links to a metric in Section 4.11.]
 
 \subsubsection{Command Detection and Classification Reliability}
 
-\towrite
+\towrite[Aim: review how reliable command detection is in practice. Cover: reported accuracy and success rates; variation between users and sessions; differences between offline and online figures; how studies measure reliability.]
 
 \subsubsection{Response Latency}
 
-\towrite
+\towrite[Aim: explain the delays in a BCI loop. Cover: the sources of delay, including signal windowing, processing, transmission and actuation; reported latencies; what counts as acceptable for vehicle control.]
 
 \subsubsection{False Activations and Missed Commands}
 
-\towrite
+\towrite[Aim: explain the two main error types. Cover: the difference between false activations and missed commands; why false activations matter most for a moving car; thresholding and the trade-off between the two errors.]
 
 \subsubsection{Cognitive Workload and User Adaptation}
 
-\towrite
+\towrite[Aim: cover the human side of control. Cover: fatigue and mental effort; BCI inefficiency, where some users cannot gain control; learning across sessions; how workload is measured, such as NASA-TLX.]
 
-\subsection{Safety and Reliability in Brain-Controlled Systems}
+\subsection{Safety and Reliability in BCI-Driven Systems}
 
-\towrite
+\towrite[Aim: review safety in brain-controlled devices. Cover: why noisy input calls for protection; emergency stops and fail-safe states; shared control; watchdogs and timeouts; ethical duties to users. Use this to justify the design in Section 3.11.]
 
-\subsection{Existing Frameworks and Related Research}
+\subsection{Existing Frameworks and Related Work}
 
-\towrite
+\towrite[Aim: review available software. Cover: open-source BCI tools and Emotiv-based projects; what they support; their licence, maintenance and limitations. State what an existing tool would not give this project, justifying a new framework.]
 
-\subsection{Research Gap and Chapter Summary}
+\subsection{Research Gap Summary}
 
-\towrite
+\towrite[Aim: close the chapter with the evidence for the gap. Cover: the main findings of the review; the specific gap this study addresses, more fully than Section 1.4; how the findings shape the framework design and experimental method.]
