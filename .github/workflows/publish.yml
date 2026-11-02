@@ -1,0 +1,21 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and Deploy
+        uses: jonhue/pubtex-action@main
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          files: main.tex
+          index_page: .github/pages-index.md
+          # The texlive-full image is current; skip the slow tlmgr update.
+          pre_compile_command: "true"
