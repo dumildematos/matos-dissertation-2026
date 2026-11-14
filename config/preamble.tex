@@ -28,6 +28,10 @@
 \usepackage{geometry}
 \geometry{letterpaper,left=134bp,top=125bp,textwidth=345pt,textheight=550pt,headheight=12pt,headsep=25pt,footskip=30pt}
 
+% --- Paragraphs: one empty line between paragraphs and a first-line indent on every paragraph ---
+\usepackage[skip=\baselineskip,indent=1.5em]{parskip}
+\usepackage{indentfirst} % also indent the first paragraph after a heading
+
 % --- Figures, tables, maths ---
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
@@ -68,6 +72,9 @@
 
 % --- Bibliography: author-year, compiled with BibTeX ---
 \usepackage[round]{natbib}
+% Standard citation style: \cite{key} prints "(Author et al., Year)" inside the sentence.
+% Use \citet{key} only when the author is part of the sentence: "Author et al. (Year) showed...".
+\let\cite\citep
 
 % --- Links: keep hyperref last ---
 \PassOptionsToPackage{hyphens}{url}
