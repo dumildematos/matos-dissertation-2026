@@ -1,91 +1,159 @@
 \section{Research Methodology and Experimental Evaluation}
 
-\towrite[Aim: open the chapter in one short paragraph. Cover: how the evaluation will answer the research question and test any hypotheses; the order of the sections that follow.]
+\towrite[Aim: explain how the evaluation answers the research question and tests the hypotheses; preview the chapter.]
 
-\subsection{Research Design}
+\subsection{Introduction}
 
-\towrite[Aim: name and justify the design. Cover: quantitative experimental evaluation, or a mixed approach if you add questionnaires; within-subject or repeated measures as applicable; independent and dependent variables; why this design fits the question.]
+\towrite[Aim: outline the research design, experiments, metrics and analysis.]
+
+\subsection{Research Design and Experimental Approach}
+
+\towrite[Aim: name and justify the experimental design. Cover: quantitative and any complementary qualitative methods; repeated-measures or between-subject structure; independent/dependent variables; how the design tests the objectives and hypotheses.]
 
 \subsection{Experimental Setup and Equipment}
 
-\towrite[Aim: let another researcher rebuild the setup. Cover: headset and sensor preparation; the car; the computer and software versions; the physical arrangement, with a photo or diagram; the procedure for checking signal contact quality.]
-
-\subsection{Car Construction and Electronics Integration}
-
-\towrite[Aim: record the car as used in the experiments. Cover: the final configuration, with a photo; any changes made after Chapter 3; how consistent behaviour was checked before each session, such as battery level and motor response. Refer to Section 3.5 for the design rather than repeating it.]
+\towrite[Aim: make the setup reproducible. Cover: headset, car and host computer; software/firmware versions; physical arrangement; calibration and contact-quality checks; include a photograph or diagram. Refer to Section 3.6 for car design details.]
 
 \subsection{Participants and Ethical Considerations}
 
-\towrite[Aim: describe who took part and how they were protected. Cover: recruitment; inclusion and exclusion criteria; number of participants and why; informed consent, with forms in Appendix B; ethics approval from the institution; data protection under GDPR; safety and the right to withdraw. If approval is pending, say so and do not state it as granted.]
+\towrite[Aim: describe recruitment, inclusion/exclusion criteria, sample size rationale, consent, institutional ethics approval, privacy/data protection, safety and withdrawal rights. Do not claim approval unless it has been granted.]
 
-\subsection{Experimental Environment}
+\subsection{Experimental Environment and Network Configuration}
 
-\towrite[Aim: describe where the tests took place. Cover: the room or track; layout and dimensions; lighting, noise and sources of electrical interference; how conditions were kept consistent between sessions.]
+\towrite[Aim: document the room or track, dimensions, layout and network topology. Cover: access point, devices, addressing, protocol endpoints, baseline signal conditions, interference control and how environmental conditions were kept consistent.]
 
-\subsection{Command Training and Calibration}
+\subsection{EEG Command Training and Calibration}
 
-\towrite[Aim: explain how participants prepared. Cover: which commands were trained; the training tool; number and length of training rounds; the criterion for being ready; how the same procedure was kept for everyone.]
+\towrite[Aim: describe headset preparation and participant calibration. Cover: trained Mental Commands, training software, number/duration of training rounds, readiness criterion and the consistent procedure applied to participants.]
 
-\subsection{Experimental Tasks and Protocol}
+\subsection{Communication Approaches and Experimental Conditions}
 
-\towrite[Aim: give the step-by-step procedure. Cover: each task, such as cued single commands and driving a set course; trial numbers and order; cue timing; rest breaks; rules for restarting or aborting. Put the full protocol in Appendix A.]
+\towrite[Aim: define the communication configurations compared. Cover: endpoint hardware/software, common message schema, payload size, rates, QoS/retry settings, trial repetitions and how each condition was kept comparable.]
+
+\subsubsection{UDP over Wi-Fi}
+
+\towrite[Aim: document the UDP configuration, addressing, message rate, payload and any application-level sequence/loss handling.]
+
+\subsubsection{TCP over Wi-Fi}
+
+\towrite[Aim: document the TCP configuration, connection lifecycle, framing, buffering, timeouts and retry settings.]
+
+\subsubsection{WebSocket over Wi-Fi}
+
+\towrite[Aim: document the WebSocket implementation, handshake, connection persistence, heartbeat, payload and timeout settings.]
+
+\subsubsection{MQTT over TCP and Quality of Service Levels}
+
+\towrite[Aim: document broker/client configuration, topics, session settings and the QoS levels tested over TCP; explain any retained-message or acknowledgement policy.]
+
+\subsubsection{MQTT over WebSocket}
+
+\towrite[Aim: document the MQTT broker's WebSocket transport, client settings, QoS levels and how this condition differs from MQTT over TCP.]
+
+\subsubsection{HTTP over Wi-Fi}
+
+\towrite[Aim: document the HTTP version, request method, connection reuse, endpoint, payload, response handling and timeout settings.]
+
+\subsubsection{CoAP over Wi-Fi}
+
+\towrite[Aim: document CoAP message type, confirmability, retransmission, endpoint, payload and timeout settings.]
+
+\subsubsection{Optional Alternative Communication Links}
+
+\towrite[If tested, document Bluetooth/BLE, UART or another alternative link, including hardware and settings. If none are tested, state this explicitly and explain the scope.]
+
+\subsection{Experimental Variables and Controlled Conditions}
+
+\towrite[Aim: define independent, dependent and controlled variables. Cover: EEG command and vehicle conditions, protocol configuration, payload and message rate; identify what is held constant and how order effects are controlled.]
+
+\subsection{Communication Benchmarking Procedure}
+
+\towrite[Aim: provide a repeatable protocol-only benchmark procedure. Cover: warm-up, message generation and receipt, timestamping, sequence identifiers, trial duration/repetitions, clock synchronisation and how baseline results are collected.]
+
+\subsection{Network Condition and Stress Testing}
+
+\towrite[Aim: describe controlled network stress conditions. Cover: how congestion, delay, jitter, loss or disconnection are introduced and measured; baseline and stressed runs; recovery procedure. Do not conflate simulated impairments with uncontrolled real-world networks.]
+
+\subsection{Physical Vehicle Control Experiments}
+
+\towrite[Aim: measure protocol performance on the physical car independently of EEG variability. Cover: test course/tasks, command source, trial sequence, repetitions, stopping criteria and how physical response is observed.]
+
+\subsection{End-to-End EEG-Based Control Experiments}
+
+\towrite[Aim: describe trials that include the complete EEG-to-vehicle path. Cover: command cues, session and trial structure, car tasks, rests, safety supervision, abort/restart rules and how command detection and actuation are timestamped.]
 
 \subsection{Pilot Study}
 
-\towrite[Aim: explain how the method was tested first. Cover: who took part; what you tried; what you changed as a result, such as thresholds, task length or instructions. Keep pilot data separate from the main results.]
+\towrite[Aim: explain the pilot participants or test runs, what was assessed and changes made to equipment, thresholds, protocol or task length. Keep pilot data separate from main-study results.]
 
 \subsection{Main Experimental Sessions}
 
-\towrite[Aim: describe how the main study ran. Cover: number of sessions and spacing between them; session structure and timing; who was present; how sessions were recorded; any deviations from the protocol.]
+\towrite[Aim: document the main sessions, their timing and order, session structure, personnel, recording procedure and deviations from protocol.]
 
-\subsection{Data Collected and Availability}
+\subsection{Data Collection and Availability}
 
-\towrite[Aim: state what data exists and who can access it. Cover: raw EEG if accessible, recognised commands, timestamps and the car's responses to tasks; file organisation and naming; pseudonymisation; secure storage and retention; what can be shared openly, with reproduction details in Appendix F. Check whether your Emotiv licence gives access to raw EEG.]
+\towrite[Aim: state what was recorded (EEG data if accessible, commands, sequence IDs, timestamps, protocol events and vehicle responses), formats, pseudonymisation, secure storage, retention and sharing conditions. Check Emotiv licence restrictions and include reproduction materials where permitted.]
 
 \subsection{Evaluation Metrics}
 
-\towrite[Aim: define how performance is measured. Cover: how the metrics link to the hypotheses and objectives; shared definitions of trial, command window and correct response. For each metric below give a formula, the unit and the logged data used.]
+\towrite[Aim: define each metric with formula, units, timestamp source and required log fields. Relate metrics to objectives and hypotheses and define shared terms such as message, trial, command window and correct response.]
 
-\subsubsection{Command Success Rate}
+\subsubsection{Communication Latency}
 
-\towrite[Aim: define this metric. Cover: correct commands executed as a share of commands cued; what counts as correct; the time window allowed.]
+\towrite[Aim: define one-way communication latency and how send/receive timestamps are obtained and synchronised; specify the measured path and units.]
 
-\subsubsection{False Activation Rate}
+\subsubsection{Round-Trip Time}
 
-\towrite[Aim: define this metric. Cover: commands detected when none was intended, or a different one was; whether it is expressed per minute or as a share of trials, and why.]
+\towrite[Aim: define round-trip time from request/message transmission through return acknowledgement or response; specify endpoints and timeout treatment.]
 
-\subsubsection{Missed Command Rate}
+\subsubsection{Latency Variation and Jitter}
 
-\towrite[Aim: define this metric. Cover: cued commands not detected within the time window, as a share of commands cued; how it relates to the success rate.]
+\towrite[Aim: define the statistic used for latency variation/jitter (for example, standard deviation or inter-packet delay variation) and justify it.]
 
-\subsubsection{Command Detection Latency}
+\subsubsection{Message Delivery and Loss Rate}
 
-\towrite[Aim: define this metric. Cover: time from cue to detection by the framework; where each timestamp comes from; clock synchronisation; timing accuracy and how you verified it.]
+\towrite[Aim: define delivery and loss using sequence identifiers, trial boundaries and sent/received counts; state how duplicate and late messages are handled.]
 
-\subsubsection{End-to-End Response Time}
+\subsubsection{Duplicate and Out-of-Order Messages}
 
-\towrite[Aim: define this metric. Cover: time from cue to physical car response; how car movement is timestamped, such as onboard feedback or video; the breakdown into detection, processing and transmission delay.]
+\towrite[Aim: define duplicate and ordering violations and the method used to detect them across protocols.]
+
+\subsubsection{Throughput and Resource Consumption}
+
+\towrite[Aim: define useful payload throughput and resource measures collected (such as CPU, memory or bandwidth), sampling interval and units.]
+
+\subsubsection{Connection Stability and Recovery Time}
+
+\towrite[Aim: define connection availability/stability and recovery time after a detected failure, including failure and recovery timestamps.]
+
+\subsubsection{EEG Command Detection Latency}
+
+\towrite[Aim: define time from cue or intended command onset to framework detection; explain timestamp source, clock accuracy and the interpretation limits of cue-based timing.]
+
+\subsubsection{Vehicle Response Time and End-to-End Latency}
+
+\towrite[Aim: define time from command detection or cue to observable physical response, distinguish component delays and specify how vehicle movement is timestamped.]
+
+\subsubsection{Command Success, False Activation, and Missed Command Rates}
+
+\towrite[Aim: define the three command metrics, correct-response window, denominator, unit and treatment of wrong or repeated actions.]
 
 \subsubsection{Task Completion Rate}
 
-\towrite[Aim: define this metric. Cover: tasks finished as a share of attempted tasks; the criteria for success and failure, such as time limits or leaving the course; any completion time measures.]
+\towrite[Aim: define task success/failure, attempted-task denominator, time limits and any completion-time measure.]
 
-\subsubsection{Performance Variation Across Sessions}
+\subsection{Data Analysis and Statistical Methods}
 
-\towrite[Aim: define how change is measured. Cover: the metrics compared across sessions; how learning, fatigue and variation between participants are examined; how you handle missing sessions.]
-
-\subsection{Data Analysis Methods}
-
-\towrite[Aim: explain the analysis before it is run. Cover: data cleaning and exclusion rules; descriptive statistics; statistical tests linked to each hypothesis, with assumption checks; significance level; effect sizes; software used. Choose tests suited to your sample size.]
-
-\subsection{Optional Investigation of a Custom Machine Learning Approach}
-
-\towrite[Aim: describe the optional comparison, if it is carried out. Cover: why a custom classifier could improve on built-in detection; available data; preprocessing and features; candidate models; validation that avoids leakage between sessions; comparison with Emotiv's detection. If it is not done, say so and remove Section 5.9.]
+\towrite[Aim: specify cleaning/exclusion rules, descriptive statistics, per-protocol comparisons and tests mapped to hypotheses. Include assumption checks, significance level, effect sizes, confidence intervals, missing-data handling and analysis software; choose methods appropriate to the sample and repeated measures.]
 
 \subsection{Validity, Reliability, and Reproducibility}
 
-\towrite[Aim: assess the method's strengths and threats. Cover: internal validity, such as learning and fatigue effects; external validity, such as sample and setting; reliability of measurement; how the open code, protocol and data allow reproduction.]
+\towrite[Aim: assess internal and external validity, measurement reliability and reproducibility. Cover: learning/fatigue/order effects, sample and setting limitations, clock and sensor uncertainty, and availability of code, protocol and permitted data.]
+
+\subsection{Safety Considerations}
+
+\towrite[Aim: describe the risk controls for participants and equipment. Cover: supervised low-speed testing, clear test area, independent emergency stop, fail-safe stop on link or signal loss, battery/electrical precautions and incident/abort procedure.]
 
 \subsection{Chapter Summary}
 
-\towrite[Aim: close the chapter. Cover: the design, metrics and analysis in brief, leading into the results.]
+\towrite[Aim: summarize the design, conditions, procedure, metrics and analysis leading into the results.]

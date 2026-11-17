@@ -1,43 +1,79 @@
 \section{Results}
 
-\towrite[Aim: open the chapter in one short paragraph. Cover: that it reports the findings without interpretation, which belongs in Chapter 6. Use only measured data.]
+\towrite[Aim: introduce this chapter as a report of measured findings, reserving interpretation for Chapter 6.]
 
 \subsection{Introduction}
 
-\towrite[Aim: outline the chapter. Cover: how results are organised and how they follow the metrics in Section 4.11.]
+\towrite[Aim: outline the results in the same order as the experimental metrics and conditions in Chapter 4.]
 
 \subsection{Overview of Collected Experimental Data}
 
-\towrite[Aim: describe the data obtained. Cover: participants and sessions completed; total trials; exclusions and reasons; data quality issues; deviations from the protocol. A summary table works well.]
+\towrite[Aim: report participants, completed sessions, trials/messages per condition, exclusions and reasons, missing data, data-quality issues and protocol deviations. Summarize counts in a table.]
 
-\subsection{Performance of BCI Command Execution}
+\subsection{Communication Benchmark Results}
 
-\towrite[Aim: report how well commands were detected. Cover: overall and per-command results; a confusion matrix of cued versus detected commands; variation between participants.]
+\towrite[Aim: present protocol benchmark findings using the definitions in Section 4.16. Report sample sizes, units, descriptive statistics and uncertainty.]
 
-\subsection{Success Rates and Missed Commands}
+\subsubsection{Latency and Round-Trip Time}
 
-\towrite[Aim: report these two rates. Cover: mean and spread for each command and participant; a table and a chart; the result of any hypothesis test on H1.]
+\towrite[Aim: report latency and RTT by protocol/condition, including distributions, central tendency, spread and outliers.]
 
-\subsection{False Activation Results}
+\subsubsection{Latency Variation and Jitter}
 
-\towrite[Aim: report unintended commands. Cover: rates by participant and condition; which commands were most often triggered wrongly; any safety events or emergency stops.]
+\towrite[Aim: report the selected jitter/variation metric by protocol/condition, with distributions and uncertainty.]
 
-\subsection{Detection Latency and End-to-End Response Time}
+\subsubsection{Message Delivery, Loss, and Ordering}
 
-\towrite[Aim: report the timing results. Cover: mean, median, spread and outliers; distribution plots; the breakdown of delay by stage; the result of any hypothesis test on H2.]
+\towrite[Aim: report delivery/loss, duplicate and out-of-order counts or rates, including protocol-specific conditions.]
 
-\subsection{Results of Car Control Tasks}
+\subsubsection{Throughput and Resource Consumption}
 
-\towrite[Aim: report task performance. Cover: completion rates by task and participant; completion times; reasons for failure.]
+\towrite[Aim: report payload throughput and measured resource use by protocol/condition.]
 
-\subsection{Performance Variation across Sessions}
+\subsubsection{Connection Stability and Recovery}
 
-\towrite[Aim: report changes over time. Cover: the metrics by session, shown in a line chart or table; participant differences; the result of any hypothesis test on H3.]
+\towrite[Aim: report connection interruptions, availability and recovery-time results under baseline and stressed conditions.]
 
-\subsection{Results of a Custom Machine Learning Model}
+\subsection{Communication Performance under Different Network Conditions}
 
-\towrite[Aim: report the optional comparison, if carried out. Cover: model performance with validation method; comparison with built-in detection using the same data; any offline-only caveat. Remove this section if the work was not done.]
+\towrite[Aim: compare protocol outcomes across baseline and network stress conditions. Show the measured change in latency, jitter, delivery and recovery without interpreting its cause.]
+
+\subsection{Comparison of UDP, TCP, and WebSocket}
+
+\towrite[Aim: present direct results for UDP, TCP and WebSocket under matched conditions. Include comparable metrics and clearly state any implementation differences.]
+
+\subsection{MQTT Performance across Quality of Service Levels}
+
+\towrite[Aim: report MQTT results for each tested QoS level, including latency, delivery, duplicates and resource use.]
+
+\subsection{Comparison of MQTT over TCP and MQTT over WebSocket}
+
+\towrite[Aim: compare the two MQTT transports under equivalent broker, QoS, payload and message-rate settings.]
+
+\subsection{HTTP and CoAP Performance Results}
+
+\towrite[Aim: report HTTP and CoAP results, including the configured request/response or confirmable-message behaviour and equivalent measures where available.]
+
+\subsection{Physical Vehicle Control Results}
+
+\towrite[Aim: report vehicle-control task outcomes by protocol/condition, including successful actions, response times, missed or repeated actions and task completion.]
+
+\subsection{EEG Command Detection and Execution Performance}
+
+\towrite[Aim: report command detection and execution outcomes by command and participant, including success, false activation and missed-command rates.]
+
+\subsection{End-to-End Response Time}
+
+\towrite[Aim: report cue-to-vehicle and detection-to-vehicle response times; provide the measured breakdown by EEG detection, framework processing, communication and physical actuation where logged.]
+
+\subsection{Performance Variation across Experimental Sessions}
+
+\towrite[Aim: report between-session and between-participant variation for the principal communication and EEG/vehicle metrics, with appropriate tables or plots.]
+
+\subsection{Overall Communication Approach Comparison}
+
+\towrite[Aim: synthesize the measured comparison across all tested approaches using common metrics. State which conditions were included and how missing or non-comparable measures are presented.]
 
 \subsection{Summary of Findings}
 
-\towrite[Aim: close the chapter with the main results. Cover: the key figures for each metric; the outcome for each hypothesis, as supported or not supported, without explaining why.]
+\towrite[Aim: summarize the principal measured results and hypothesis outcomes without explaining their causes; lead into the discussion.]
