@@ -1,6 +1,6 @@
 \section{Brain-Computer Interfaces and Communication Technologies for EEG-Based Control}
 
-\towrite[Aim: open the literature review in one short paragraph. Cover: the subject of the chapter and how it supports the research question.]
+This chapter reviews the fundamental concepts of Brain-Computer Interfaces (BCIs), EEG-based control systems, and communication technologies relevant to the development of a brain-controlled remote vehicle. It introduces the principles of BCI operation, EEG signal acquisition and interpretation, and the technologies used to transmit commands between computing devices and embedded systems. Furthermore, it examines existing research, communication protocols, and performance characteristics to establish the theoretical foundation for the system development and experimental evaluation conducted in this dissertation.
 
 \subsection{Introduction}
 
@@ -14,7 +14,31 @@ A BCI system can be described through three main stages. The first stage is sign
 
 \subsection{Fundamentals of Brain-Computer Interfaces}
 
-\towrite[Aim: define the field. Cover: what a BCI is; the standard pipeline of acquisition, processing, translation and output; invasive versus non-invasive; active, reactive and passive BCIs; main application areas. Cite foundational sources.]
+A Brain-Computer Interface (BCI) is a system that enables direct communication between the human brain and an external device by measuring and interpreting brain activity. Unlike conventional Human-Computer Interaction (HCI), which typically relies on physical actions such as typing, clicking, or touching, BCIs provide an alternative interaction mechanism based on neural signals \cite{ramadan2015basics}.
+
+The human brain generates electrical activity associated with different cognitive and motor processes. Advances in neuroscience and computing have made it possible to acquire, process, and interpret these signals to generate commands for external devices. Consequently, BCIs can be used to support communication, assistive technologies, rehabilitation, and device control \cite{setiono2018rccar}.
+
+BCIs can be designed to translate brain activity into functionally useful outputs, enabling users to interact with or control external systems. Depending on their design and application, these systems may restore, supplement, or enhance existing human capabilities, or provide alternative interaction mechanisms for individuals with physical disabilities \citepalias{bcisociety}.
+
+In the context of this dissertation, BCIs are investigated as an alternative mechanism for controlling a physical remote-controlled vehicle using EEG signals. Particular attention is given to the communication technologies used to transmit interpreted brain commands from the host application to the vehicle controller. The following sections introduce the fundamental architecture, classifications, applications, and challenges of BCI systems, establishing the theoretical foundation for the proposed system and its experimental evaluation.
+
+\subsubsection{General BCI Architecture and Operation}
+
+This section describes the fundamental stages of a BCI system, from brain signal acquisition to device output. The architecture typically includes signal acquisition, signal processing, feature extraction, classification or translation, command generation, and output execution. Feedback mechanisms may also be incorporated to allow users to observe the system's response and adapt their brain activity accordingly.
+
+\subsubsection{Classification of BCI Systems}
+
+BCI systems can be classified into three main categories according to the method used to acquire brain activity: invasive, partially invasive, and non-invasive systems. This classification is based on how electrical signals are obtained from neuronal activity in the brain. Invasive BCIs acquire signals through electrodes implanted directly into brain tissue, while partially invasive systems use electrodes positioned within the skull but outside the brain tissue. Non-invasive BCIs acquire brain activity without requiring surgical implantation. Figure~\ref{fig:bci-classification} illustrates this classification, including the distinction between single-unit and multi-unit acquisition techniques within invasive BCIs \cite{hassanien2015}.
+
+\thesisfigure[width=\textwidth]{figures/ch2/bci_classification_figure1.png}{Classification of brain-computer interfaces according to signal acquisition methods. Adapted from \citet{hassanien2015}.}{fig:bci-classification}
+
+\subsubsection{Applications of Brain-Computer Interfaces}
+
+BCIs have been investigated across several application domains, including communication, assistive technology, rehabilitation, human-computer interaction, neurofeedback, and robotics. These applications demonstrate the potential of BCIs to enable alternative interaction mechanisms and control external devices.
+
+\subsubsection{Challenges and Limitations}
+
+Despite their potential, BCI systems face several challenges, including signal quality, noise and artifacts, variability between users, training and calibration requirements, classification accuracy, response time, and system reliability. These challenges can influence the usability and practical performance of BCI-based applications.
 
 \subsection{EEG Technology and Brain Signal Acquisition}
 

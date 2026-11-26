@@ -75,6 +75,8 @@
 % Standard citation style: \cite{key} prints "(Author et al., Year)" inside the sentence.
 % Use \citet{key} only when the author is part of the sentence: "Author et al. (Year) showed...".
 \let\cite\citep
+% Undated sources: apalike strips the periods from "n.d.", so cite them with \citepalias{key}.
+\defcitealias{bcisociety}{BCI Society, n.d.}
 
 % --- Links: keep hyperref last ---
 \PassOptionsToPackage{hyphens}{url}

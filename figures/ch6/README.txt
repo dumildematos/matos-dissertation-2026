@@ -1,1 +1,7 @@
-Upload this chapter's figures here, then add them to the chapter with 	hesisfigure.
+Figures for Chapter 6 (chapters/06-discussion.tex).
+
+Upload the image here, then add it to the chapter with:
+
+  \thesisfigure{figures/ch6/fig-6-name.png}{Caption.}{fig:name}
+
+Until the file exists, a placeholder box shows its path.
